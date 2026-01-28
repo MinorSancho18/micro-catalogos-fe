@@ -17,7 +17,7 @@ function cargarTabla() {
             }
         },
         columns: [
-            { data: 'idCliente' },
+            { data: 'idCliente', visible: false },
             { data: 'nombre' },
             { data: 'numeroCedula' },
             {

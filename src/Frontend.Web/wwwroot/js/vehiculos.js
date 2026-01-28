@@ -32,7 +32,7 @@ function cargarTabla() {
             }
         },
         columns: [
-            { data: 'idVehiculo' },
+            { data: 'idVehiculo', visible: false },
             { data: 'descripcion' },
             {
                 data: null,

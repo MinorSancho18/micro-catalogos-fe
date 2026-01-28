@@ -17,7 +17,7 @@ function cargarTabla() {
             }
         },
         columns: [
-            { data: 'idExtra' },
+            { data: 'idExtra', visible: false },
             { data: 'descripcion' },
             {
                 data: 'costo',
