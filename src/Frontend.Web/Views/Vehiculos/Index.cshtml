@@ -1,0 +1,107 @@
+@{
+    ViewData["Title"] = "Vehículos";
+}
+
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-12">
+            <h2>Gestión de Vehículos</h2>
+            <hr />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12">
+            <button type="button" class="btn btn-primary" onclick="abrirModalAgregar()">
+                <i class="bi bi-plus-circle"></i> Agregar Vehículo
+            </button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <table id="tablaVehiculos" class="table table-striped table-bordered" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Descripción</th>
+                        <th>Categoría</th>
+                        <th>Costo</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Formulario (Crear/Editar) -->
+<div class="modal fade" id="modalFormulario" tabindex="-1" aria-labelledby="modalFormularioLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalFormularioLabel">Agregar Vehículo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formVehiculo">
+                    <input type="hidden" id="idVehiculo" />
+                    <div class="mb-3">
+                        <label for="descripcion" class="form-label">Descripción</label>
+                        <input type="text" class="form-control" id="descripcion" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="idCategoria" class="form-label">Categoría</label>
+                        <select class="form-select" id="idCategoria" required>
+                            <option value="">Seleccione una categoría...</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="costo" class="form-label">Costo</label>
+                        <input type="number" class="form-control" id="costo" step="0.01" required />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" onclick="guardarVehiculo()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Detalle (Ver) -->
+<div class="modal fade" id="modalDetalle" tabindex="-1" aria-labelledby="modalDetalleLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalDetalleLabel">Detalle del Vehículo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <dl class="row">
+                    <dt class="col-sm-4">ID:</dt>
+                    <dd class="col-sm-8" id="detalleId"></dd>
+
+                    <dt class="col-sm-4">Descripción:</dt>
+                    <dd class="col-sm-8" id="detalleDescripcion"></dd>
+
+                    <dt class="col-sm-4">Categoría:</dt>
+                    <dd class="col-sm-8" id="detalleCategoria"></dd>
+
+                    <dt class="col-sm-4">Costo:</dt>
+                    <dd class="col-sm-8" id="detalleCosto"></dd>
+                </dl>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/vehiculos.js" asp-append-version="true"></script>
+}

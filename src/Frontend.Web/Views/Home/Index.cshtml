@@ -1,0 +1,74 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12 text-center mb-5">
+            <h1 class="display-4">Microservicio de Catálogos</h1>
+            <p class="lead">Sistema de gestión de catálogos con arquitectura limpia</p>
+            <hr class="my-4">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-people-fill" style="font-size: 3rem; color: #0d6efd;"></i>
+                    <h5 class="card-title mt-3">Clientes</h5>
+                    <p class="card-text">Gestión completa de clientes con información de identificación.</p>
+                    <a href="@Url.Action("Index", "Clientes")" class="btn btn-primary">Ir a Clientes</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-car-front-fill" style="font-size: 3rem; color: #198754;"></i>
+                    <h5 class="card-title mt-3">Vehículos</h5>
+                    <p class="card-text">Catálogo de vehículos con categorías y costos asociados.</p>
+                    <a href="@Url.Action("Index", "Vehiculos")" class="btn btn-success">Ir a Vehículos</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-plus-circle-fill" style="font-size: 3rem; color: #ffc107;"></i>
+                    <h5 class="card-title mt-3">Extras</h5>
+                    <p class="card-text">Administración de extras y servicios adicionales.</p>
+                    <a href="@Url.Action("Index", "Extras")" class="btn btn-warning">Ir a Extras</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <h5 class="card-title">Características del Sistema</h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check-circle-fill text-success"></i> CRUD completo para todas las entidades</li>
+                                <li><i class="bi bi-check-circle-fill text-success"></i> Arquitectura limpia (Clean Architecture)</li>
+                                <li><i class="bi bi-check-circle-fill text-success"></i> Interfaz moderna con Bootstrap 5</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check-circle-fill text-success"></i> DataTables para gestión de datos</li>
+                                <li><i class="bi bi-check-circle-fill text-success"></i> Autenticación JWT automática</li>
+                                <li><i class="bi bi-check-circle-fill text-success"></i> Consumo de API REST</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
